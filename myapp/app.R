@@ -1,9 +1,12 @@
-# app.R — Materialize + Icons / PC-スマホでヘッダー切替（sidenav）＆タイトル崩れ対策
+# app.R — Materialize + Icons / レスポンシブ最適化版（スマホ対応・サイドナビ）+ あなたの画像を使用
 library(shiny)
 
 ui <- fluidPage(
   tags$head(
+    # スマホ倍率のズレ防止
     tags$meta(name="viewport", content="width=device-width, initial-scale=1.0"),
+    
+    # Materialize & Icons
     tags$link(rel="stylesheet",
               href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"),
     tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"),
@@ -14,9 +17,9 @@ ui <- fluidPage(
       body { letter-spacing:.2px; }
       /* タイトルが重ならないように段階的に調整 */
       .brand-logo { font-weight:700; white-space:nowrap; font-size:28px; }
-      @media (max-width: 1200px){ .brand-logo { font-size:24px; } }
-      @media (max-width: 992px) { .brand-logo { font-size:22px; } }
-      @media (max-width: 600px) { .brand-logo { font-size:20px; } }
+      @media (max-width:1200px){ .brand-logo { font-size:24px; } }
+      @media (max-width:992px) { .brand-logo { font-size:22px; } }
+      @media (max-width:600px) { .brand-logo { font-size:20px; } }
 
       .hero {
         border-radius:18px; padding:24px;
@@ -45,10 +48,19 @@ ui <- fluidPage(
       .tabs { overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch; }
       .tabs .tab { display:inline-block; }
       .tabs .tab a { font-size:13px; padding:0 12px; }
-      @media (max-width:360px){ .tabs .tab a { font-size:12px; padding:0 10px; } .avatar{width:84px;height:84px;} }
 
-      /* ハンバーガー（右側に出す） */
-      .sidenav { width: 260px; }
+      /* フェード（“ページ遷移”っぽく） */
+      .fade-pane { opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease; }
+      .fade-pane.show { opacity:1; transform:translateY(0); }
+
+      @media (max-width:360px){
+        .tabs .tab a { font-size:12px; padding:0 10px; }
+        .avatar{width:84px;height:84px;}
+        .hero { padding:18px; }
+      }
+
+      /* サイドナビ（中小画面） */
+      .sidenav { width:260px; }
     ")),
     
     # ===== JS: Tabs/Sidenav初期化 & ヘッダー/サイドからタブ遷移 =====
@@ -57,11 +69,11 @@ ui <- fluidPage(
         var tabsEl = document.querySelector('.tabs');
         var tabsInstance = tabsEl ? M.Tabs.init(tabsEl, {}) : null;
 
-        // Floating Action Button
+        // FAB
         var fabs = document.querySelectorAll('.fixed-action-btn');
         M.FloatingActionButton.init(fabs, {hoverEnabled:false});
 
-        // Sidenav（右から）
+        // Sidenav（右から出す）
         var sidenavs = document.querySelectorAll('.sidenav');
         M.Sidenav.init(sidenavs, {edge:'right'});
 
@@ -110,25 +122,25 @@ ui <- fluidPage(
     "))
   ),
   
-  # ===== ヘッダー（大画面は右上メニュー／中小はハンバーガーに） =====
+  # ===== ヘッダー（大画面は右上メニュー／中小はハンバーガーに切替） =====
   tags$nav(class="nav-wrapper teal",
            div(class="container",
                tags$a(href="#home", class="brand-logo", "ジョーソンランド"),
-               # 大画面で表示
+               # 大画面メニュー
                tags$ul(class="right hide-on-med-and-down",
                        tags$li(tags$a(href="#home",    tags$i(class="material-icons left", "home"),   "Home")),
                        tags$li(tags$a(href="#works",   tags$i(class="material-icons left", "work"),   "Works")),
                        tags$li(tags$a(href="#about",   tags$i(class="material-icons left", "person"), "About")),
                        tags$li(tags$a(href="#contact", tags$i(class="material-icons left", "send"),   "Contact"))
                ),
-               # 中小画面：ハンバーガー（右側）
+               # 中小画面：ハンバーガー
                tags$a(href="#", class="sidenav-trigger right hide-on-large-only",
                       `data-target`="mobile-menu",
                       tags$i(class="material-icons", "menu"))
            )
   ),
   
-  # ===== サイドナビ（中小画面で使う） =====
+  # ===== サイドナビ（モバイル） =====
   tags$ul(id="mobile-menu", class="sidenav right-aligned",
           tags$li(tags$a(href="#home",    tags$i(class="material-icons left", "home"),   "Home")),
           tags$li(tags$a(href="#works",   tags$i(class="material-icons left", "work"),   "Works")),
@@ -152,8 +164,13 @@ ui <- fluidPage(
           div(class="hero",
               div(class="row valign-wrapper",
                   div(class="col s12 m2 center",
-                      tags$img(src="https://avatars.githubusercontent.com/u/14101776?s=200&v=4",
-                               class="avatar", alt="avatar")
+                      # ★ あなたの画像（raw URL で直接表示）
+                      tags$img(
+                        src = "https://raw.githubusercontent.com/castella3/castella3.github.io/main/images/IMG_5739.jpg",
+                        class = "avatar", alt = "プロフィール画像"
+                      )
+                      # もしくは www/images/avatar.jpg に置いた場合：
+                      # tags$img(src = "images/avatar.jpg", class = "avatar", alt = "プロフィール画像")
                   ),
                   div(class="col s12 m10",
                       tags$h4("Hi, I'm ジョーソンランド"),
@@ -262,7 +279,7 @@ ui <- fluidPage(
       )
   ),
   
-  # ===== Contact =====
+  # ===== Contact（重複ラベルなし） =====
   div(id="contact", class="container",
       div(class="fade-pane",
           tags$h4(tags$i(class="material-icons", "send"), " お問い合わせ"),
