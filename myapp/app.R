@@ -206,7 +206,8 @@ ui <- fluidPage(
                     tags$li(tags$a(href="#home",    tags$i(class="material-icons left", "home"),   "Home")),
                     tags$li(tags$a(href="#works",   tags$i(class="material-icons left", "work"),   "Works")),
                     tags$li(tags$a(href="#about",   tags$i(class="material-icons left", "person"), "About")),
-                    tags$li(tags$a(href=utm_nav,    target="_blank", rel="noopener",
+                    # ★ここを外部リンクから内部リンク(#product)に変更
+                    tags$li(tags$a(href="#product",
                                    tags$i(class="material-icons left", "apps"),   "App"))
             ),
             tags$a(href="#", class="sidenav-trigger right hide-on-large-only",
@@ -220,7 +221,8 @@ ui <- fluidPage(
           tags$li(tags$a(href="#home",    tags$i(class="material-icons left", "home"),   "Home")),
           tags$li(tags$a(href="#works",   tags$i(class="material-icons left", "work"),   "Works")),
           tags$li(tags$a(href="#about",   tags$i(class="material-icons left", "person"), "About")),
-          tags$li(tags$a(href=utm_nav,    target="_blank", rel="noopener",
+          # ★モバイルメニューのAppも外部リンク → #product へ
+          tags$li(tags$a(href="#product",
                          tags$i(class="material-icons left", "apps"),   "App"))
   ),
   
@@ -567,4 +569,3 @@ ui <- fluidPage(
 server <- function(input, output, session) { }
 
 shinyApp(ui, server)
-
