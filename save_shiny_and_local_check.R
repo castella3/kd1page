@@ -1,6 +1,14 @@
 # install.packages("shinylive")  # 初回のみibrary(shinylive)
-shinylive::export(appdir = "myapp", destdir = "docs")
-
+# shinylive::export(appdir = "myapp", destdir = "docs")
+shinylive::export(
+  appdir  = "myapp",   # app.R が入っているフォルダ
+  destdir = "docs",    # GitHub Pages 用のフォルダ
+  template_params = list(
+    # ここがブラウザのタブ名になる
+    title = "Daichi Kamimura | R/Shiny Portfolio – powered by Shiny"
+    
+  )
+)
 # install.packages("servr")   # 未インストールなら
 
 free_port <- httpuv::randomPort()
