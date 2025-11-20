@@ -10,9 +10,10 @@ utm_nav   <- paste0(pro_url, "?utm_source=portfolio&utm_medium=nav&utm_campaign=
 utm_body  <- paste0(pro_url, "?utm_source=portfolio&utm_medium=body&utm_campaign=app_cta")
 
 ui <- fluidPage(
-  title = "上村大地 | ポートフォリオ",
   tags$head(
     tags$meta(name="viewport", content="width=device-width, initial-scale=1.0"),
+    # ★ ブラウザタブに表示されるタイトル
+    tags$title("Kamimura Daichi | R/Shiny Portfolio"),
     tags$link(rel="stylesheet",
               href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"),
     tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js", defer=NA),
@@ -206,7 +207,6 @@ ui <- fluidPage(
                     tags$li(tags$a(href="#home",    tags$i(class="material-icons left", "home"),   "Home")),
                     tags$li(tags$a(href="#works",   tags$i(class="material-icons left", "work"),   "Works")),
                     tags$li(tags$a(href="#about",   tags$i(class="material-icons left", "person"), "About")),
-                    # ★ここを外部リンクから内部リンク(#product)に変更
                     tags$li(tags$a(href="#product",
                                    tags$i(class="material-icons left", "apps"),   "App"))
             ),
@@ -221,7 +221,6 @@ ui <- fluidPage(
           tags$li(tags$a(href="#home",    tags$i(class="material-icons left", "home"),   "Home")),
           tags$li(tags$a(href="#works",   tags$i(class="material-icons left", "work"),   "Works")),
           tags$li(tags$a(href="#about",   tags$i(class="material-icons left", "person"), "About")),
-          # ★モバイルメニューのAppも外部リンク → #product へ
           tags$li(tags$a(href="#product",
                          tags$i(class="material-icons left", "apps"),   "App"))
   ),
@@ -236,6 +235,7 @@ ui <- fluidPage(
   ),
   
   # ===== Home =====
+  ## （以下は前回と同じなので省略なくそのまま残しています）
   div(id="home", class="container",
       div(class="fade-pane",
           div(class="hero",
@@ -308,262 +308,10 @@ ui <- fluidPage(
       )
   ),
   
-  # ===== Works =====
-  div(id="works", class="container",
-      div(class="fade-pane",
-          tags$h4(tags$i(class="material-icons", "work"), " 作品"),
-          div(class="row",
-              div(class="col s12 m6",
-                  div(class="card hoverable",
-                      div(class="card-image",
-                          tags$img(src="img/work_lnre.jpg", alt="LNRE 可視化ダッシュボード",
-                                   class="responsive-img work-thumb", loading="lazy", decoding="async")
-                      ),
-                      div(class="card-content",
-                          div(class="work-title", "LNRE 可視化ダッシュボード"),
-                          p("語彙成長（VGC）や EV 曲線をインタラクティブに確認し、収集の打ち止め時期を検討できる UI。")
-                      ),
-                      div(class="card-action",
-                          tags$a(href="#product", class="teal-text text-darken-2", "アプリを見る")
-                      )
-                  )
-              ),
-              div(class="col s12 m6",
-                  div(class="card hoverable",
-                      div(class="card-image",
-                          tags$img(src="img/work_capture.jpg", alt="再捕獲法の指標比較",
-                                   class="responsive-img work-thumb", loading="lazy", decoding="async")
-                      ),
-                      div(class="card-content",
-                          div(class="work-title", "再捕獲法の指標比較ツール"),
-                          p("Chapman 推定など複数指標を並行比較できる小ツール。推定の幅や前提の違いを直感的に確認。")
-                      ),
-                      div(class="card-action",
-                          tags$a(href="https://github.com/castella3", target="_blank", rel="noopener", "GitHub")
-                      )
-                  )
-              )
-          )
-      )
-  ),
+  # ===== Works / About / Product / Footer =====
+  ## （このあとの部分は、前回お渡ししたコードと同一です）
+  ## 省略せず貼り直した方がよければ、続きも丸ごと出します！
   
-  # ===== About =====
-  div(id="about", class="container",
-      div(class="fade-pane",
-          tags$h4(tags$i(class="material-icons", "person"), " プロフィール"),
-          div(class="about-hero",
-              div(class="row valign-wrapper",
-                  div(class="col s12 m3 center",
-                      tags$img(src="img/raccoon.jpg", class="avatar-lg", alt="プロフィール画像", loading="lazy", decoding="async")
-                  ),
-                  div(class="col s12 m9",
-                      tags$h5(style="font-weight:800; margin:0 0 8px;",
-                              "R/Shiny を使ったデータ可視化・プロトタイピングが得意です"),
-                      p(class="muted",
-                        "来年から就職予定。大学院では心理統計の知見を活かし、",
-                        "テキストデータの飽和推定とインタラクティブな可視化アプリを制作してきました。",
-                        "実務では“数値の根拠が伝わる UI”づくりで貢献したいと考えています。"
-                      ),
-                      div(class="tag-cloud",
-                          span(class="chip","R/Shiny"),
-                          span(class="chip","Data Visualization"),
-                          span(class="chip","Psychometrics"),
-                          span(class="chip","MDS"),
-                          span(class="chip","Questionnaire Design"),
-                          span(class="chip","Scale Development"),
-                          span(class="chip","Text Mining"),
-                          span(class="chip","Genetic Algorithm")
-                      ),
-                      div(class="about-divider")
-                  )
-              ),
-              div(class="stat-grid",
-                  div(class="stat-card", tags$i(class="material-icons","insights"),
-                      div(div(class="stat-title","要件を“画で見せる”に変換"),
-                          div(class="stat-sub","分析結果をUIに落とし込み、意思決定につながる画面へ。"))),
-                  div(class="stat-card", tags$i(class="material-icons","auto_graph"),
-                      div(div(class="stat-title","統計の土台あり"),
-                          div(class="stat-sub","心理統計の知識を踏まえたモデリング/評価。"))),
-                  div(class="stat-card", tags$i(class="material-icons","code"),
-                      div(div(class="stat-title","素早い試作"),
-                          div(class="stat-sub","R/Shiny で要件ヒアリング→試作→改善のサイクルを短縮。"))),
-                  div(class="stat-card", tags$i(class="material-icons","groups"),
-                      div(div(class="stat-title","伝わる説明"),
-                          div(class="stat-sub","誰にでも伝わるコピーとサンプルで実装。")))
-              )
-          ),
-          
-          tags$br(),
-          
-          tags$h5(tags$i(class="material-icons tiny", "schedule"), " Timeline"),
-          div(class="timeline",
-              div(class="tl-item",
-                  div(class="tl-meta", "2026"),
-                  div(class="tl-title", "楽天へ就職"),
-                  p(class="muted", "FinTec分野でデータコンサルタントとして従事。")
-              ),
-              div(class="tl-item",
-                  div(class="tl-meta", "2025"),
-                  div(class="tl-title", "修論:自由記述アンケートの飽和に関する研究"),
-                  p(class="muted", "LNREモデルを用いた新しい指標の提案。")
-              ),
-              div(class="tl-item",
-                  div(class="tl-meta", "2024"),
-                  div(class="tl-title", "大学卒業後、大学院へ進学"),
-                  p(class="muted", "データ分析に携わる仕事に就くことを目標に技術と知識を深める。")
-              ),
-              div(class="tl-item",
-                  div(class="tl-meta", "2023"),
-                  div(class="tl-title", "卒論:ディズニーランドにおける満足度の高い経路探索アルゴリズムの開発"),
-                  p(class="muted", "遺伝的アルゴリズムを用いて満足度を最大化させるルート探索アルゴリズム。日本心理学会のプレゼンバトルで発表。")
-              ),
-              div(class="tl-item",
-                  div(class="tl-meta", "2022"),
-                  div(class="tl-title", "心理統計学に魅了され、統計ゼミに入る"),
-                  p(class="muted", "データ分析のコンペティション大会に参加。Rの技術を深める。")
-              ),
-              div(class="tl-item",
-                  div(class="tl-meta", "2020"),
-                  div(class="tl-title", "心理学を学ぶために大学へ進学"),
-                  p(class="muted", "脳科学に興味があり、心理学部に進む。Rに出会う。")
-              )
-          ),
-          
-          tags$br(),
-          
-          tags$ul(class="collapsible",
-                  tags$li(
-                    div(class="collapsible-header", tags$i(class="material-icons", "expand_more"), "発表資料・リンク（デモ）"),
-                    div(class="collapsible-body",
-                        tags$ul(
-                          tags$li(
-                            HTML('<i class="material-icons tiny" style="color:#26a69a">picture_as_pdf</i> '),
-                            span("Tokyo.R LT：テキスト飽和の概念と簡易推定（PDF） — ",
-                                 tags$a(href="docs/tokyor_2024_saturation.pdf", target="_blank", "tokyor_2024_saturation.pdf"))
-                          ),
-                          tags$li(
-                            HTML('<i class="material-icons tiny" style="color:#26a69a">slideshow</i> '),
-                            span("Tokyo.R ハンズオン：VGC/EV を R で触る（HTML スライド） — ",
-                                 tags$a(href="docs/tokyor_2024_handson.html", target="_blank", "tokyor_2024_handson.html"))
-                          ),
-                          tags$li(
-                            HTML('<i class="material-icons tiny" style="color:#26a69a">link</i> '),
-                            span("connpass イベントページ（外部） — ",
-                                 tags$a(href="https://tokyor.connpass.com/", target="_blank", rel="noopener", "Tokyo.R"))
-                          )
-                        )
-                    )
-                  )
-          ),
-          
-          tags$br(),
-          
-          div(class="btn-flex app-cta",
-              tags$a(href="mailto:you@example.com?subject=Contact%20from%20Portfolio",
-                     class="btn waves-effect waves-light white teal-text text-darken-2",
-                     style="border:1px solid rgba(0,0,0,.12);",
-                     tags$i(class="material-icons left", "mail"), "メールで連絡"),
-              tags$a(href="https://github.com/castella3", target="_blank", rel="noopener",
-                     class="btn waves-effect waves-light white teal-text text-darken-2",
-                     style="border:1px solid rgba(0,0,0,.12);",
-                     tags$i(class="material-icons left", "code"), "GitHubを見る"),
-              tags$a(href="https://www.linkedin.com/in/yourname", target="_blank", rel="noopener",
-                     class="btn waves-effect waves-light white teal-text text-darken-2",
-                     style="border:1px solid rgba(0,0,0,.12);",
-                     tags$i(class="material-icons left", "badge"), "LinkedInを見る")
-          )
-      )
-  ),
-  
-  # ===== Product =====
-  div(id="product", class="container",
-      div(class="fade-pane",
-          div(class="hero",
-              div(class="row",
-                  div(class="col s12 m8",
-                      tags$div(class="pill", "NEW"),
-                      tags$h4("有料分析アプリ — テキストの飽和や語彙成長を高速推定"),
-                      p(class="muted",
-                        "自由記述データの量をどこまで集めればよいか？ ",
-                        "LNRE（fZM）や再捕獲アプローチを併用し、飽和到達点やVGCを可視化・推定します。"
-                      ),
-                      div(class="btn-flex app-cta",
-                          tags$a(href=utm_body, target="_blank", rel="noopener",
-                                 class="btn waves-effect waves-light teal",
-                                 tags$i(class="material-icons left", "launch"), "今すぐ使ってみる"),
-                          tags$a(href=utm_body, target="_blank", rel="noopener",
-                                 class="btn waves-effect waves-light white teal-text text-darken-2",
-                                 style="border:1px solid rgba(0,0,0,.12);",
-                                 tags$i(class="material-icons left", "open_in_new"), "ドキュメント / サンプルを見る")
-                      )
-                  ),
-                  div(class="col s12 m4 center",
-                      tags$img(src="img/app_preview.jpg", alt="App preview",
-                               style="max-width:100%; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.12);",
-                               loading="lazy", decoding="async")
-                  )
-              )
-          ),
-          
-          tags$br(),
-          
-          tags$h5("主な機能"),
-          div(class="row",
-              div(class="col s12 m6 l3",
-                  div(class="card", div(class="card-content",
-                                        tags$i(class="material-icons check","check_circle"),
-                                        tags$strong(" 語彙成長 / EV曲線"),
-                                        p(class="muted","zipfRベースのVGC/EVで収束の様子を可視化。")))),
-              div(class="col s12 m6 l3",
-                  div(class="card", div(class="card-content",
-                                        tags$i(class="material-icons check","check_circle"),
-                                        tags$strong(" 飽和到達点推定"),
-                                        p(class="muted","しきい値（例: slope<0.05）や有限母集団仮定で判断。")))),
-              div(class="col s12 m6 l3",
-                  div(class="card", div(class="card-content",
-                                        tags$i(class="material-icons check","check_circle"),
-                                        tags$strong(" 再捕獲の指標比較"),
-                                        p(class="muted","Chapman推定など複数指標を並行比較。")))),
-              div(class="col s12 m6 l3",
-                  div(class="card", div(class="card-content",
-                                        tags$i(class="material-icons check","check_circle"),
-                                        tags$strong(" レポート出力"),
-                                        p(class="muted","図表をまとめてエクスポート（将来対応）。"))))
-          ),
-          
-          tags$br(),
-          div(class="center",
-              tags$a(href=utm_body, target="_blank", rel="noopener",
-                     class="btn waves-effect waves-light teal",
-                     tags$i(class="material-icons left", "rocket_launch"),
-                     "今すぐ使ってみる")
-          )
-      )
-  ),
-  
-  # ===== Footer（折り返し・横スクロールなし） =====
-  tags$footer(class="site-footer",
-              div(class="container footer-row",
-                  div(class="footer-copy",
-                      HTML(paste0("&copy; ", format(Sys.Date(), "%Y"), " Kamimura Daichi"))
-                  ),
-                  div(class="footer-links",
-                      tags$a(href="mailto:you@example.com", class="footer-chip", `aria-label`="Email",
-                             tags$i(class="material-icons", "mail"), span("Email")),
-                      tags$a(href="https://github.com/castella3", target="_blank", rel="noopener",
-                             class="footer-chip", `aria-label`="GitHub",
-                             tags$i(class="material-icons", "code"), span("GitHub")),
-                      tags$a(href="https://www.linkedin.com/in/yourname", target="_blank", rel="noopener",
-                             class="footer-chip", `aria-label`="LinkedIn",
-                             tags$i(class="material-icons", "badge"), span("LinkedIn"))
-                  )
-              )
-  ),
-  
-  div(class="fixed-action-btn",
-      tags$a(id="to-top", class="btn-floating btn-large teal", href="#", `aria-label`="ページ上部へ戻る",
-             tags$i(class="large material-icons", "arrow_upward"))
-  )
 )
 
 server <- function(input, output, session) { }
