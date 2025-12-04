@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上村大地 | ポートフォリオ</title>
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/raccoon.jpg?v=7" type="image/jpeg">
+</head>
+<body class="ja-mode">
+
+  <!-- Header -->
+  <nav>
+    <div class="nav-wrapper teal">
+      <div class="container">
+        <a href="#home" class="brand-logo">Kamimura Daichi</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#home"><i class="material-icons left">home</i><span class="lang-ja">Home</span><span class="lang-en">Home</span></a></li>
+          <li><a href="#works"><i class="material-icons left">work</i><span class="lang-ja">Works</span><span class="lang-en">Works</span></a></li>
+          <li><a href="#about"><i class="material-icons left">person</i><span class="lang-ja">About</span><span class="lang-en">About</span></a></li>
+          <li><a href="#product"><i class="material-icons left">apps</i><span class="lang-ja">App</span><span class="lang-en">App</span></a></li>
+          <li><a href="#" id="lang-toggle" style="font-weight:bold; border:1px solid rgba(255,255,255,0.5); padding:0 10px; margin-left:10px; line-height:32px; height:34px; margin-top:15px; border-radius:4px;">EN</a></li>
+        </ul>
+        <a href="#" data-target="mobile-menu" class="sidenav-trigger right hide-on-large-only"><i class="material-icons">menu</i></a>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="sidenav right-aligned" id="mobile-menu">
+    <li><a href="#home"><i class="material-icons left">home</i>Home</a></li>
+    <li><a href="#works"><i class="material-icons left">work</i>Works</a></li>
+    <li><a href="#about"><i class="material-icons left">person</i>About</a></li>
+    <li><a href="#product"><i class="material-icons left">apps</i><span class="lang-ja">App</span><span class="lang-en">App</span></a></li>
+  </ul>
+
+  <div>
+    <ul class="tabs">
+      <li class="tab"><a href="#home">HOME</a></li>
+      <li class="tab"><a href="#works">WORKS</a></li>
+      <li class="tab"><a href="#about">ABOUT</a></li>
+      <li class="tab"><a href="#product">APP</a></li>
+    </ul>
+  </div>
+
+  <!-- Home -->
+  <div id="home" class="container">
+    <div class="fade-pane">
+      <div class="hero">
+        <div id="particles-js"></div>
+        <div class="row valign-wrapper">
+          <div class="col s12 m2 center">
+            <img src="img/raccoon.jpg" class="avatar" alt="プロフィール画像" loading="eager" decoding="async" width="96" height="96">
+          </div>
+          <div class="col s12 m10">
+            <h4><span class="lang-ja">Hi, I'm Kamimura Daichi</span><span class="lang-en">Hi, I'm Kamimura Daichi</span></h4>
+            <p>
+              <span class="lang-ja">データ分析と R/Shiny を使ったインタラクティブな可視化が好きです。</span><span class="lang-en">I love interactive visualization using Data Analysis and R/Shiny.</span>
+              <span class="lang-ja">心理統計の知見を、実務で誰でも使えるWebアプリケーションまで落とし込むことを目指しています。</span><span class="lang-en">I aim to translate insights from psychometrics into web applications that anyone can use in practice.</span>
+            </p>
+            <div class="chips">
+              <span class="chip">R/Shiny</span>
+              <span class="chip">Data Visualization</span>
+              <span class="chip">Psychometrics</span>
+              <span class="chip">MDS</span>
+              <span class="chip">Questionnaire Design</span>
+              <span class="chip">Scale Development</span>
+              <span class="chip">Text Mining</span>
+              <span class="chip">Genetic Algorithm</span>
+            </div>
+            <br>
+            <div class="btn-flex home-cta">
+              <a href="#about" class="btn waves-effect waves-light teal"><i class="material-icons left">person</i><span class="lang-ja">プロフィール</span><span class="lang-en">Profile</span></a>
+              <a href="#works" class="btn waves-effect waves-light white teal-text text-darken-2" style="border:1px solid rgba(0,0,0,.12);"><i class="material-icons left">work</i><span class="lang-ja">作品</span><span class="lang-en">Works</span></a>
+              <a href="#product" class="btn waves-effect waves-light white teal-text text-darken-2" style="border:1px solid rgba(0,0,0,.12);"><i class="material-icons left">apps</i><span class="lang-ja">アプリ</span><span class="lang-en">App</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5><i class="material-icons tiny">link</i> SNS / Links</h5>
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <a class="superlink" href="https://github.com/castella3" target="_blank" rel="noopener">
+            <i class="material-icons">code</i>
+            <div>
+              <div style="font-weight:700;">GitHub</div>
+              <div class="muted"><span class="nowrap-block"><span class="lang-ja">コード・リポジトリ</span><span class="lang-en">Code Repository</span></span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6 l3">
+          <a class="superlink" href="https://x.com/dkamimura0" target="_blank" rel="noopener">
+            <i class="material-icons">chat</i>
+            <div>
+              <div style="font-weight:700;">X (Twitter)</div>
+              <div class="muted"><span class="lang-ja">日々のメモ</span><span class="lang-en">Daily Notes</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6 l3">
+          <a class="superlink" href="https://www.linkedin.com/in/daichi-kamimura" target="_blank" rel="noopener">
+            <i class="material-icons">badge</i>
+            <div>
+              <div style="font-weight:700;">LinkedIn</div>
+              <div class="muted"><span class="lang-ja">経歴・スキル</span><span class="lang-en">Career & Skills</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6 l3">
+          <a class="superlink" href="mailto:you@example.com">
+            <i class="material-icons">mail</i>
+            <div>
+              <div style="font-weight:700;">Email</div>
+              <div class="muted">kamimura202047@gmail.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+  <!-- Works -->
+  <div id="works" class="container">
+    <div class="fade-pane">
+      <h4><i class="material-icons">work</i><span class="lang-ja"> 作品</span><span class="lang-en"> Works</span></h4>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="img/work_lnre.jpg" alt="LNRE 可視化ダッシュボード" class="responsive-img work-thumb" loading="lazy" decoding="async">
+            </div>
+            <div class="card-content">
+              <div class="work-title"><span class="lang-ja">LNRE 可視化ダッシュボード</span><span class="lang-en">LNRE Visualization Dashboard</span></div>
+              <p><span class="lang-ja">語彙成長（VGC）や EV 曲線をインタラクティブに確認し、収集の打ち止め時期を検討できる UI。</span><span class="lang-en">UI to interactively check Vocabulary Growth Curves (VGC) and EV curves to determine when to stop data collection.</span></p>
+            </div>
+            <div class="card-action">
+              <a href="#product" class="teal-text text-darken-2"><span class="lang-ja">アプリを見る</span><span class="lang-en">View App</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="img/work_capture.jpg" alt="再捕獲法の指標比較" class="responsive-img work-thumb" loading="lazy" decoding="async">
+            </div>
+            <div class="card-content">
+              <div class="work-title"><span class="lang-ja">再捕獲法の指標比較ツール</span><span class="lang-en">Capture-Recapture Metrics Comparison</span></div>
+              <p><span class="lang-ja">Chapman 推定など複数指標を並行比較できる小ツール。推定の幅や前提の違いを直感的に確認。</span><span class="lang-en">A small tool to compare multiple metrics like Chapman estimation. Intuitively check the range of estimates and differences in assumptions.</span></p>
+            </div>
+            <div class="card-action">
+              <a href="https://github.com/castella3" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div id="about" class="container">
+    <div class="fade-pane">
+      <h4><i class="material-icons">person</i><span class="lang-ja"> プロフィール</span><span class="lang-en"> Profile</span></h4>
+      <div class="about-hero">
+        <div class="row valign-wrapper">
+          <div class="col s12 m3 center">
+            <img src="img/raccoon.jpg" class="avatar-lg" alt="プロフィール画像" loading="lazy" decoding="async">
+          </div>
+          <div class="col s12 m9">
+            <h5 style="font-weight:800; margin:0 0 8px;">
+              <span class="lang-ja">R/Shiny を使ったデータ可視化・プロトタイピングが得意です</span><span class="lang-en">Specializing in Data Visualization and Prototyping with R/Shiny</span>
+            </h5>
+            <p class="muted">
+              <span class="lang-ja">来年から就職予定。大学院では心理統計の知見を活かし、</span><span class="lang-en">Starting a new job next year. In graduate school, leveraging insights from psychometrics,</span>
+              <span class="lang-ja">テキストデータの飽和推定とインタラクティブな可視化アプリを制作してきました。</span><span class="lang-en">I have been creating interactive visualization apps for estimating text data saturation.</span>
+              <span class="lang-ja">実務では“数値の根拠が伝わる UI”づくりで貢献したいと考えています。</span><span class="lang-en">In practice, I aim to contribute by creating UIs that convey the basis of numbers.</span>
+            </p>
+            <div class="tag-cloud">
+              <span class="chip">R/Shiny</span>
+              <span class="chip">Data Visualization</span>
+              <span class="chip">Psychometrics</span>
+              <span class="chip">MDS</span>
+              <span class="chip">Questionnaire Design</span>
+              <span class="chip">Scale Development</span>
+              <span class="chip">Text Mining</span>
+              <span class="chip">Genetic Algorithm</span>
+            </div>
+            <div class="about-divider"></div>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <i class="material-icons">insights</i>
+            <div>
+              <div class="stat-title"><span class="lang-ja">要件を“画で見せる”に変換</span><span class="lang-en">Visualizing Requirements</span></div>
+              <div class="stat-sub"><span class="lang-ja">分析結果をUIに落とし込み、意思決定につながる画面へ。</span><span class="lang-en">Translating analysis results into UIs that lead to decision-making.</span></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="material-icons">auto_graph</i>
+            <div>
+              <div class="stat-title"><span class="lang-ja">統計の土台あり</span><span class="lang-en">Statistical Foundation</span></div>
+              <div class="stat-sub"><span class="lang-ja">心理統計の知識を踏まえたモデリング/評価。</span><span class="lang-en">Modeling and evaluation based on knowledge of psychometrics.</span></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="material-icons">code</i>
+            <div>
+              <div class="stat-title"><span class="lang-ja">素早い試作</span><span class="lang-en">Rapid Prototyping</span></div>
+              <div class="stat-sub"><span class="lang-ja">R/Shiny で要件ヒアリング→試作→改善のサイクルを短縮。</span><span class="lang-en">Shortening the cycle of requirement hearing -> prototyping -> improvement with R/Shiny.</span></div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="material-icons">groups</i>
+            <div>
+              <div class="stat-title"><span class="lang-ja">伝わる説明</span><span class="lang-en">Clear Explanation</span></div>
+              <div class="stat-sub"><span class="lang-ja">誰にでも伝わるコピーとサンプルで実装。</span><span class="lang-en">Implemented with copy and samples that anyone can understand.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h5><i class="material-icons tiny">schedule</i> Timeline</h5>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-meta">2026</div>
+          <div class="tl-title"><span class="lang-ja">楽天へ就職</span><span class="lang-en">Joining Rakuten</span></div>
+          <p class="muted"><span class="lang-ja">FinTec分野でデータコンサルタントとして従事。</span><span class="lang-en">Working as a Data Consultant in the FinTech field.</span></p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-meta">2025</div>
+          <div class="tl-title"><span class="lang-ja">修論:自由記述アンケートの飽和に関する研究</span><span class="lang-en">Master's Thesis: Research on Saturation in Open-ended Surveys</span></div>
+          <p class="muted"><span class="lang-ja">LNREモデルを用いた新しい指標の提案。</span><span class="lang-en">Proposing new metrics using LNRE models.</span></p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-meta">2024</div>
+          <div class="tl-title"><span class="lang-ja">大学卒業後、大学院へ進学</span><span class="lang-en">Entered Graduate School after University</span></div>
+          <p class="muted"><span class="lang-ja">データ分析に携わる仕事に就くことを目標に技術と知識を深める。</span><span class="lang-en">Deepening skills and knowledge with the goal of working in data analysis.</span></p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-meta">2023</div>
+          <div class="tl-title"><span class="lang-ja">卒論:ディズニーランドにおける満足度の高い経路探索アルゴリズムの開発</span><span class="lang-en">Bachelor's Thesis: Route Search Algorithm for High Satisfaction at Disneyland</span></div>
+          <p class="muted"><span class="lang-ja">遺伝的アルゴリズムを用いて満足度を最大化させるルート探索アルゴリズム。日本心理学会のプレゼンバトルで発表。</span><span class="lang-en">Route search algorithm maximizing satisfaction using Genetic Algorithms. Presented at the Japanese Psychological Association presentation battle.</span></p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-meta">2022</div>
+          <div class="tl-title"><span class="lang-ja">心理統計学に魅了され、統計ゼミに入る</span><span class="lang-en">Fascinated by Psychometrics, Joined Statistics Seminar</span></div>
+          <p class="muted"><span class="lang-ja">データ分析のコンペティション大会に参加。Rの技術を深める。</span><span class="lang-en">Participated in data analysis competitions. Deepened R skills.</span></p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-meta">2020</div>
+          <div class="tl-title"><span class="lang-ja">心理学を学ぶために大学へ進学</span><span class="lang-en">Entered University to Study Psychology</span></div>
+          <p class="muted"><span class="lang-ja">脳科学に興味があり、心理学部に進む。Rに出会う。</span><span class="lang-en">Interested in Neuroscience, entered the Faculty of Psychology. Encountered R.</span></p>
+        </div>
+      </div>
+      <br>
+      <ul class="collapsible">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">expand_more</i><span class="lang-ja">発表資料・リンク（デモ）</span><span class="lang-en">Presentations & Links (Demo)</span></div>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <i class="material-icons tiny" style="color:#26a69a">picture_as_pdf</i>
+                <span>Tokyo.R LT：テキスト飽和の概念と簡易推定（PDF） — <a href="docs/tokyor_2024_saturation.pdf" target="_blank">tokyor_2024_saturation.pdf</a></span>
+              </li>
+              <li>
+                <i class="material-icons tiny" style="color:#26a69a">slideshow</i>
+                <span>Tokyo.R ハンズオン：VGC/EV を R で触る（HTML スライド） — <a href="docs/tokyor_2024_handson.html" target="_blank">tokyor_2024_handson.html</a></span>
+              </li>
+              <li>
+                <i class="material-icons tiny" style="color:#26a69a">link</i>
+                <span><span class="lang-ja">connpass イベントページ（外部） — </span><span class="lang-en">connpass Event Page (External) — </span><a href="https://tokyor.connpass.com/" target="_blank" rel="noopener">Tokyo.R</a></span>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <br>
+      <div class="btn-flex app-cta">
+        <a href="https://x.com/dkamimura0" target="_blank" rel="noopener" class="btn waves-effect waves-light white teal-text text-darken-2" style="border:1px solid rgba(0,0,0,.12);"><i class="material-icons left">chat</i><span class="lang-ja">X (Twitter)を見る</span><span class="lang-en">View X (Twitter)</span></a>
+        <a href="https://github.com/castella3" target="_blank" rel="noopener" class="btn waves-effect waves-light white teal-text text-darken-2" style="border:1px solid rgba(0,0,0,.12);"><i class="material-icons left">code</i><span class="lang-ja">GitHubを見る</span><span class="lang-en">View GitHub</span></a>
+        <a href="https://www.linkedin.com/in/daichi-kamimura" target="_blank" rel="noopener" class="btn waves-effect waves-light white teal-text text-darken-2" style="border:1px solid rgba(0,0,0,.12);"><i class="material-icons left">badge</i><span class="lang-ja">LinkedInを見る</span><span class="lang-en">View LinkedIn</span></a>
+        <a href="mailto:you@example.com?subject=Contact%20from%20Portfolio" class="btn waves-effect waves-light white teal-text text-darken-2" style="border:1px solid rgba(0,0,0,.12);"><i class="material-icons left">mail</i><span class="lang-ja">メールで連絡</span><span class="lang-en">Contact via Email</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product -->
+  <div id="product" class="container">
+    <div class="fade-pane">
+      <div class="hero">
+        <div class="row">
+          <div class="col s12 m8">
+            <div class="pill">NEW</div>
+            <h4><span class="lang-ja">有料分析アプリ — テキストの飽和や語彙成長を高速推定</span><span class="lang-en">Paid Analysis App — Fast Estimation of Text Saturation and Vocabulary Growth</span></h4>
+            <p class="muted">
+              <span class="lang-ja">自由記述データの量をどこまで集めればよいか？ </span><span class="lang-en">How much open-ended data should be collected? </span>
+              <span class="lang-ja">LNRE（fZM）や再捕獲アプローチを併用し、飽和到達点やVGCを可視化・推定します。</span><span class="lang-en">Using LNRE (fZM) and capture-recapture approaches to visualize and estimate saturation points and VGC.</span>
+            </p>
+            <div class="btn-flex app-cta">
+              <a href="https://your-pro-app.example?utm_source=portfolio&utm_medium=body&utm_campaign=app_cta" target="_blank" rel="noopener" class="btn waves-effect waves-light teal"><i class="material-icons left">launch</i><span class="lang-ja">今すぐ使ってみる</span><span class="lang-en">Try it Now</span></a>
+              <a href="https://your-pro-app.example?utm_source=portfolio&utm_medium=body&utm_campaign=app_cta" target="_blank" rel="noopener" class="btn waves-effect waves-light white teal-text text-darken-2" style="border:1px solid rgba(0,0,0,.12);"><i class="material-icons left">open_in_new</i><span class="lang-ja">ドキュメント / サンプルを見る</span><span class="lang-en">Docs / Samples</span></a>
+            </div>
+          </div>
+          <div class="col s12 m4 center">
+            <img src="img/app_preview.jpg" alt="App preview" style="max-width:100%; border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.12);" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+      <br>
+      <h5><span class="lang-ja">主な機能</span><span class="lang-en">Key Features</span></h5>
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-content">
+              <i class="material-icons check">check_circle</i>
+              <strong><span class="lang-ja"> 語彙成長 / EV曲線</span><span class="lang-en"> Vocabulary Growth / EV Curve</span></strong>
+              <p class="muted"><span class="lang-ja">zipfRベースのVGC/EVで収束の様子を可視化。</span><span class="lang-en">Visualize convergence with zipfR-based VGC/EV.</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-content">
+              <i class="material-icons check">check_circle</i>
+              <strong><span class="lang-ja"> 飽和到達点推定</span><span class="lang-en"> Saturation Point Estimation</span></strong>
+              <p class="muted"><span class="lang-ja">しきい値（例: slope<0.05）や有限母集団仮定で判断。</span><span class="lang-en">Judged by threshold (e.g., slope < 0.05) or finite population assumption.</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-content">
+              <i class="material-icons check">check_circle</i>
+              <strong><span class="lang-ja"> 再捕獲の指標比較</span><span class="lang-en"> Capture-Recapture Metrics</span></strong>
+              <p class="muted"><span class="lang-ja">Chapman推定など複数指標を並行比較。</span><span class="lang-en">Parallel comparison of multiple metrics like Chapman estimation.</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-content">
+              <i class="material-icons check">check_circle</i>
+              <strong><span class="lang-ja"> レポート出力</span><span class="lang-en"> Report Export</span></strong>
+              <p class="muted"><span class="lang-ja">図表をまとめてエクスポート（将来対応）。</span><span class="lang-en">Export charts and tables (Future support).</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="center">
+        <a href="https://your-pro-app.example?utm_source=portfolio&utm_medium=body&utm_campaign=app_cta" target="_blank" rel="noopener" class="btn waves-effect waves-light teal"><i class="material-icons left">rocket_launch</i><span class="lang-ja">今すぐ使ってみる</span><span class="lang-en">Try it Now</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div class="footer-copy">
+        &copy; <script>document.write(new Date().getFullYear())</script> Kamimura Daichi
+      </div>
+      <div class="footer-links">
+        <a href="https://x.com/dkamimura0" target="_blank" rel="noopener" class="footer-chip" aria-label="X (Twitter)"><i class="material-icons">chat</i> <span>X (Twitter)</span></a>
+        <a href="https://github.com/castella3" target="_blank" rel="noopener" class="footer-chip" aria-label="GitHub"><i class="material-icons">code</i> <span>GitHub</span></a>
+        <a href="https://www.linkedin.com/in/daichi-kamimura" target="_blank" rel="noopener" class="footer-chip" aria-label="LinkedIn"><i class="material-icons">badge</i> <span>LinkedIn</span></a>
+        <a href="mailto:you@example.com" class="footer-chip" aria-label="Email"><i class="material-icons">mail</i> <span>Email</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fixed-action-btn">
+    <a id="to-top" class="btn-floating btn-large teal" href="#" aria-label="ページ上部へ戻る">
+      <i class="large material-icons">arrow_upward</i>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
